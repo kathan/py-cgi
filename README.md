@@ -26,3 +26,9 @@ Once you configure and restart NGINX, you can start py-cgi.
 ```sh
 gunicorn -b :8091 -w 4 -k gevent --worker-connections=2000 --backlog=1000 -p gunicorn.pid py-cgi:app
 ```
+### Usage:
+Any .py file that is beneath the NGINX root folder will be imported and execute when it is accessed by NGINX. Each file must have a cgi method that will be called as the insertion point.
+```py
+def cgi(environ, resp_head):
+    return "hello world!"
+```
