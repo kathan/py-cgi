@@ -5,7 +5,7 @@ py-cgi is a Python CGI process manager, similar to php-fpm, for executing python
 * gunicorn
 * gevent
 
-### Usage:
+### NGINX Config:
 Add a directive to your `nginx.conf` file.
 ```
 location ~ [^/]\.py(/|$) {
