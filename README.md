@@ -29,6 +29,7 @@ gunicorn -b :8091 -w 4 -k gevent --worker-connections=2000 --backlog=1000 -p gun
 ### Usage:
 Any .py file that is beneath the NGINX root folder will be imported and execute when it is accessed by NGINX. Each file must have a cgi method that will be called as the insertion point. The text that is returned will be sent to the browser.
 ```py
-def cgi(environ, resp_head):
+def main(environ, resp_head):
+    resp_head.append(("Content-Type", "text/html"))
     return "hello world!"
 ```
