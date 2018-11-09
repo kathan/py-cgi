@@ -4,6 +4,7 @@ py-cgi is a Python CGI process manager, similar to php-fpm, for executing python
 ### Dependencies:
 * gunicorn
 * gevent
+* monkey
 
 ### NGINX Config:
 Add a directive to your `nginx.conf` file.
